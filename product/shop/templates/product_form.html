@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMPLOYEE REGISTER</title>
+</head>
+<body>
+    <h2>PRODUCTS</h2>
+    <ul>
+       {% for item in products %}
+       <li>
+        {{ item.name }} - RS {{ item.price }}
+        <a href="{% url 'add_product' item.id %}">ADD</a> |
+       </li>
+       {% empty %}
+       <li>No Products Yet</li>
+       {% endfor %}
+    </ul>
+    <br>
+    <a href="{% url 'view' %}">Add To cart</a>
+</body>
+</html>
+
